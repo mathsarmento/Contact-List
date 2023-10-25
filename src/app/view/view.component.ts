@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-view',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class ViewComponent {
 
+  public loading: boolean = true
+
+  constructor() {
+    this.delayfake()
+  }
+
+  public delayfake(){
+    setTimeout(() => {
+      this.loading = false
+    }, 5000);
+  }
 }

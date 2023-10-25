@@ -1,1 +1,49 @@
-<div class="center"> teste</div>
+<div class="header">
+  <div>
+    <h1 routerLink="" >Contact List</h1>
+    <p routerLink="/view">Create</p>
+  </div>
+</div>
+<div class="center">
+  <div class="table">
+    <table mat-table [dataSource]="allContacts"  class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="name" >
+        <th mat-header-cell *matHeaderCellDef style="width: 25%"> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef style=" width: 5%; text-align: center"> Country </th>
+        <td mat-cell *matCellDef="let row" style="text-align: center">
+          <img [src]="flags[row.localization.country]" class="iconFlag">
+        </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="phone" >
+        <th mat-header-cell *matHeaderCellDef style="width: 15%"> Phone </th>
+        <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="email" >
+        <th mat-header-cell *matHeaderCellDef style="width: 20%"> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="birthday" >
+        <th mat-header-cell *matHeaderCellDef style="width: 10%; text-align: center"> Birthday </th>
+        <td mat-cell *matCellDef="let row" style="text-align: center;"> {{row.birthday}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions" >
+        <th mat-header-cell *matHeaderCellDef style="width: 10%; text-align: center"> Actions </th>
+        <td mat-cell *matCellDef="let row" style="text-align: center;"> edit </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

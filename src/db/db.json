@@ -1,94 +1,94 @@
 {
-  "contacts" : [
+  "contacts": [
     {
       "id": 1,
-      "name" : "Christina D. Bayer",
-      "phone" : "775-878-8392",
-      "birthday" : "",
-      "email" : "christinaDBayer@rhyta.com",
-      "gender" : "",
-      "localization" : {
-        "country" : 1,
-        "zip" : "",
-        "city" : "",
-        "address" : "",
-        "number" : "",
-        "complemento" : ""
+      "name": "Christina D. Bayer",
+      "phone": "775-878-8392",
+      "birthday": "",
+      "email": "christinaDBayer@rhyta.com",
+      "gender": "",
+      "localization": {
+        "country": 1,
+        "zip": "",
+        "city": "",
+        "address": "",
+        "number": "",
+        "complemento": ""
       },
-      "type" : 0,
-      "picture" : ""
+      "type": 0,
+      "picture": ""
     },
     {
       "id": 2,
-      "name" : "Fred J. Arellano",
-      "phone" : "646-359-5042",
-      "birthday" : "",
-      "email" : "FredJArellano@armyspy.com",
-      "gender" : "",
-      "localization" : {
-        "country" : "",
-        "zip" : "",
-        "city" : "",
-        "address" : "",
-        "number" : "",
-        "complemento" : ""
+      "name": "Fred J. Arellano",
+      "phone": "646-359-5042",
+      "birthday": "",
+      "email": "FredJArellano@armyspy.com",
+      "gender": "",
+      "localization": {
+        "country": "",
+        "zip": "",
+        "city": "",
+        "address": "",
+        "number": "",
+        "complemento": ""
       },
-      "type" : 0,
-      "picture" : ""
+      "type": 0,
+      "picture": ""
     },
     {
       "id": 3,
-      "name" : "Lucas Armando Souza",
-      "phone" : "11 98755-7865",
-      "birthday" : "",
-      "email" : "lucasarm23@gmail.com",
-      "gender" : "",
-      "localization" : {
-        "country" : 0,
-        "zip" : "04514-100",
-        "city" : "São Paulo",
-        "address" : "Rua Tuim",
-        "number" : "328",
-        "complemento" : ""
+      "name": "Lucas Armando Souza",
+      "phone": "11 98755-7865",
+      "birthday": "",
+      "email": "lucasarm23@gmail.com",
+      "gender": "",
+      "localization": {
+        "country": 0,
+        "zip": "04514-100",
+        "city": "São Paulo",
+        "address": "Rua Tuim",
+        "number": "328",
+        "complemento": ""
       },
-      "type" : 0,
-      "picture" : ""
+      "type": 0,
+      "picture": ""
     },
     {
       "id": 4,
-      "name" : "Gabriela Ferreira",
-      "phone" : "23 98775-9852",
-      "birthday" : "",
-      "email" : "gabifer@hotmail.com",
-      "gender" : "",
-      "localization" : {
-        "country" : 0,
-        "zip" : "04016-002",
-        "city" : "São Paulo",
-        "address" : "R. França Pinto",
-        "number" : "554",
-        "complemento" : ""
+      "name": "Gabriela Ferreira",
+      "phone": "23 98775-9852",
+      "birthday": "",
+      "email": "gabifer@hotmail.com",
+      "gender": "",
+      "localization": {
+        "country": 0,
+        "zip": "04016-002",
+        "city": "São Paulo",
+        "address": "R. França Pinto",
+        "number": "554",
+        "complemento": ""
       },
-      "type" : "",
-      "picture" : ""
+      "type": "",
+      "picture": ""
     },
     {
       "id": 5,
-      "name" : "",
-      "phone" : "",
-      "birthday" : "",
-      "email" : "",
-      "gender" : "",
-      "localization" : {
-        "country" : "",
-        "zip" : "",
-        "city" : "",
-        "address" : "",
-        "number" : "",
-        "complemento" : ""
+      "name": "",
+      "phone": "",
+      "birthday": "",
+      "email": "",
+      "gender": "",
+      "localization": {
+        "country": "",
+        "zip": "",
+        "city": "",
+        "address": "",
+        "number": "",
+        "complemento": ""
       },
-      "type" : "",
-      "picture" : ""
+      "type": "",
+      "picture": ""
     }
   ]
 }

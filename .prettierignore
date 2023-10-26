@@ -1,0 +1,9 @@
+dist
+.husky
+build
+coverage
+e2e
+node_modules
+.prettierignore
+.stylelintignore
+.eslintignore

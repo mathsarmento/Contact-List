@@ -3,19 +3,18 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.scss']
+  styleUrls: ['./view.component.scss'],
 })
 export class ViewComponent {
-
-  public loading: boolean = true
+  public loading: boolean = true;
 
   constructor() {
-    this.delayfake()
+    this.delayfake();
   }
 
-  public delayfake(){
+  public delayfake() {
     setTimeout(() => {
-      this.loading = false
+      this.loading = false;
     }, 1000);
   }
 }

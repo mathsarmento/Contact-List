@@ -60,9 +60,6 @@
   "lint-staged": {
     "src/{app,enviroments}/**/*.{ts,html}": [
       "prettier --write --ignore-unknown"
-    ],
-    "**/*.{css,scss}": [
-      "stylelint --allow-empty-input "
     ]
   },
   "engines": {

@@ -3,7 +3,37 @@
     <h1 routerLink="">Contact List</h1>
   </div>
 </div>
-<div class="loading">
-  <app-loading *ngIf="loading" text="Loading..."></app-loading>
+<div *ngIf="loading" class="loading">
+  <app-loading text="Loading..."></app-loading>
 </div>
-<div *ngIf="!loading"></div>
+<div *ngIf="!loading" class="backgroundCard">
+  <mat-card>
+    <mat-stepper linear="false">
+      <mat-step>
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <div style="margin-top: 15px">
+          <!-- NAME -->
+          <mat-form-field appearance="outline" style="width: 30%; margin-right: 15px">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Erick S. Cartman" />
+          </mat-form-field>
+
+          <!-- EMAIL -->
+          <mat-form-field appearance="outline" style="width: 30%">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="erickscart@gmail.com" />
+          </mat-form-field>
+
+          <!-- GENDER -->
+          <mat-radio-group id="masculino">
+            <mat-radio-button value="masculino" id="masculino">Maculino</mat-radio-button>
+            <mat-radio-button value="feminino" id="feminino">Feminino</mat-radio-button>
+            <mat-radio-button (change)="(teste)" value="other" id="other"
+              ><mat-form-field> <mat-label>Other</mat-label> <input [disabled]="teste" matInput /> </mat-form-field
+            ></mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </mat-card>
+</div>

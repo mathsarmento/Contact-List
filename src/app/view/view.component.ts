@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ViewComponent {
   public loading: boolean = true;
-
+  public teste: boolean = false;
   constructor() {
     this.delayfake();
   }

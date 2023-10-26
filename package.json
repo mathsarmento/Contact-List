@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "json:server": "json-server --watch src/db/db.json"
+    "json:server": "json-server --watch src/db/db.json",
+    "format:write": "prettier --config ./.prettierrc --write --list-different \"src/{app,enviroments}/**/*{.ts,.html,.scss}\"",
+    "format:staged": "pretty-quick --staged --pattern \"src/{app,enviroments}/**/*{.ts,.html,.scss}\"",
+    "lint:staged": "lint-staged",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +40,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.3",
     "jasmine-core": "~4.6.0",
     "json-server": "^0.17.4",
     "karma": "~6.4.0",
@@ -43,8 +48,24 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lint-staged": "^15.0.2",
     "prettier": "3.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
+  },
+  "eslintIgnore": [
+    "**/*.scss"
+  ],
+  "lint-staged": {
+    "src/{app,enviroments}/**/*.{ts,html}": [
+      "prettier --write --ignore-unknown"
+    ],
+    "**/*.{css,scss}": [
+      "stylelint --allow-empty-input "
+    ]
+  },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   }
 }

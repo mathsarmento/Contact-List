@@ -6,7 +6,7 @@
       "phone" : "775-878-8392",
       "birthday" : "",
       "email" : "christinaDBayer@rhyta.com",
-      "gender" : 1,
+      "gender" : "",
       "localization" : {
         "country" : 1,
         "zip" : "",
@@ -24,7 +24,7 @@
       "phone" : "646-359-5042",
       "birthday" : "",
       "email" : "FredJArellano@armyspy.com",
-      "gender" : 0,
+      "gender" : "",
       "localization" : {
         "country" : "",
         "zip" : "",
@@ -42,7 +42,7 @@
       "phone" : "11 98755-7865",
       "birthday" : "",
       "email" : "lucasarm23@gmail.com",
-      "gender" : 0,
+      "gender" : "",
       "localization" : {
         "country" : 0,
         "zip" : "04514-100",
@@ -60,7 +60,7 @@
       "phone" : "23 98775-9852",
       "birthday" : "",
       "email" : "gabifer@hotmail.com",
-      "gender" : 2,
+      "gender" : "",
       "localization" : {
         "country" : 0,
         "zip" : "04016-002",

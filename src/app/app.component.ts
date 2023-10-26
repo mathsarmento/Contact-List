@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'listCont';
-
-  private teste: string = 'teste';
 }

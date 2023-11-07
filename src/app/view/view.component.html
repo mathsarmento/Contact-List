@@ -11,27 +11,30 @@
     <mat-stepper linear="false">
       <mat-step>
         <ng-template matStepLabel>Fill out your name</ng-template>
-        <div style="margin-top: 15px">
+        <div style="margin-top: 15px; display: flex">
           <!-- NAME -->
-          <mat-form-field appearance="outline" style="width: 30%; margin-right: 15px">
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Erick S. Cartman" />
-          </mat-form-field>
-
+          <app-input type="text" label="Name:" placeholder="Erick S. Cartman"></app-input>
           <!-- EMAIL -->
-          <mat-form-field appearance="outline" style="width: 30%">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="erickscart@gmail.com" />
-          </mat-form-field>
-
+          <app-input type="text" label="Email:" placeholder="erickscart@gmail.com"></app-input>
           <!-- GENDER -->
-          <mat-radio-group id="masculino">
-            <mat-radio-button value="masculino" id="masculino">Maculino</mat-radio-button>
-            <mat-radio-button value="feminino" id="feminino">Feminino</mat-radio-button>
-            <mat-radio-button (change)="(teste)" value="other" id="other"
-              ><mat-form-field> <mat-label>Other</mat-label> <input [disabled]="teste" matInput /> </mat-form-field
-            ></mat-radio-button>
-          </mat-radio-group>
+          <div>
+            <!-- <label id="example-radio-group-label">Pick your gender</label> -->
+            <mat-radio-group value="male">
+              <mat-radio-button color="warn" value="male" id="male">Male</mat-radio-button>
+              <mat-radio-button color="warn" value="female" id="female">Female</mat-radio-button>
+              <mat-radio-button color="warn" value="other" id="other">
+                <app-input type="text" label="" placeholder="Other" width="125px"></app-input>
+              </mat-radio-button>
+            </mat-radio-group>
+            <!--<mat-radio-group [(ngModel)]="tipoFiltro" aria-labelledby="example-radio-group-label">
+              <mat-radio-button
+                *ngFor="let tipo of entradaFiltro"
+                [value]="tipo.toLowerCase()"
+                class="radioButtonFiltro">
+                {{ tipo }}
+              </mat-radio-button>
+            </mat-radio-group> -->
+          </div>
         </div>
       </mat-step>
     </mat-stepper>

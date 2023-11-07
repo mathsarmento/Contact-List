@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IContact } from '../models/contatc.models';
 import { ContactService } from '../services/contact.service';
-import { Contact } from '../models/contatc.models';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Contact } from '../models/contatc.models';
 })
 export class HomeComponent implements OnInit {
   public displayedColumns: string[] = ['name', 'country', 'phone', 'email', 'birthday', 'actions'];
-  public allContacts: Contact[] = [];
+  public allContacts: IContact[] = [];
   public flags: string[] = [
     '../../assets/icons/brazil.png',
     '../../assets/icons/united-states.png',

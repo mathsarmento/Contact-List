@@ -1,16 +1,16 @@
-export interface Contact {
+export interface IContact {
   id?: number;
   name: string;
   phone: number;
   birthday: number; //fix
   email: string;
   gender: string;
-  localization: Localization;
+  localization: ILocalization;
   type: string;
   picture: string; // fix
 }
 
-interface Localization {
+export interface ILocalization {
   country: number;
   zip: number;
   city: string;

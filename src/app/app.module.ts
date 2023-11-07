@@ -16,8 +16,9 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { Error404Component } from './error404/error404.component';
 import { HomeComponent } from './home/home.component';
 import { ViewComponent } from './view/view.component';
+import { InputComponent } from './components/input/input.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, Error404Component, ViewComponent, LoadingComponent],
+  declarations: [AppComponent, HomeComponent, Error404Component, ViewComponent, LoadingComponent, InputComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

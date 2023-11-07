@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Contact } from 'src/app/models/contact';
+import { IContact } from 'src/app/models/contatc.models';
 
 @Component({
   selector: 'app-view',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./view.component.scss'],
 })
 export class ViewComponent {
+  public contact: IContact = new Contact();
   public loading: boolean = true;
   public teste: boolean = false;
   constructor() {

@@ -2,8 +2,8 @@ import { IContact, ILocalization } from 'src/app/models/contatc.models';
 
 export class Contact implements IContact {
   name = '';
-  phone = 0;
-  birthday = 0; //fix
+  phone = '';
+  birthday = ''; //fix
   email = '';
   gender = '';
   localization = new Localization();

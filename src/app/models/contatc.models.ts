@@ -1,8 +1,8 @@
 export interface IContact {
   id?: number;
   name: string;
-  phone: number;
-  birthday: number; //fix
+  phone: string;
+  birthday: string; //fix
   email: string;
   gender: string;
   localization: ILocalization;

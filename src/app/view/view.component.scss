@@ -16,6 +16,12 @@
   }
 }
 
+.topLine {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .loading {
   display: flex;
   align-items: center;
@@ -27,11 +33,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 700px;
+  height: 500px;
 }
 
 mat-card {
-  height: 450px;
+  height: 400px;
   width: 1000px;
   padding: 25px;
+}
+
+.basicInput {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.labelGender{
+  font-size: 0.9rem;
+  color: #1876c2;
+  font-weight: 700;
+  position: relative;
+  top: -11px;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #424242;
+}
+
+.inputGender {
+  border: 2px solid #1876c2;
+  border-radius: 6px;
+}
+
+.radioGender {
+  margin-bottom: 10px;
+  display: flex;
+  margin-top: -8px;
+  align-items: center;
 }

@@ -1,4 +1,13 @@
 <div class="coolinput" [style]="'width:' + width">
   <label for="input" class="text">{{ label }}</label>
-  <input [type]="type" [placeholder]="placeholder" name="input" class="input" [disabled]="disabled" />
+  <input
+    [(ngModel)]="ngModelInput"
+    [name]="name"
+    (ngModelChange)="changeValue($event)"
+    [type]="type"
+    [placeholder]="placeholder"
+    name="input"
+    class="input"
+    [mask]="mask"
+    [disabled]="disabled" />
 </div>

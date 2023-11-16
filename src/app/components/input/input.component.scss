@@ -7,7 +7,7 @@
 }
 
 .coolinput label.text {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: #1876c2;
   font-weight: 700;
   position: relative;
@@ -19,8 +19,17 @@
 }
 
 .coolinput input[type=text].input {
-  padding: 11px 10px;
-  font-size: 0.75rem;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  color: antiquewhite;
+  border: 2px #1876c2 solid;
+  border-radius: 5px;
+  background: #424242;
+}
+
+.coolinput input[type=number].input {
+  padding: 15px 10px;
+  font-size: 0.9rem;
   color: antiquewhite;
   border: 2px #1876c2 solid;
   border-radius: 5px;

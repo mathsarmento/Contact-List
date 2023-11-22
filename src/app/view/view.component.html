@@ -8,18 +8,18 @@
 </div>
 <div *ngIf="!loading" class="backgroundCard">
   <mat-card>
-    <mat-stepper linear="false">
-      <mat-step>
-        <ng-template matStepLabel>Fill out your name</ng-template>
+    <mat-stepper [linear]="true" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Description</ng-template>
         <div class="basicInput">
-          <div class="topLine">
+          <div class="inputLine">
             <!-- NAME -->
             <app-input type="text" label="Name:" placeholder="Erick S. Cartman"></app-input>
             <!-- EMAIL -->
             <app-input type="text" label="Email:" placeholder="erickscart@gmail.com"></app-input>
             <!-- GENDER -->
             <div class="inputGender">
-              <label for="input" class="labelGender">Pick your gender</label>
+              <label for="input">Pick your gender</label>
               <mat-radio-group value="male" class="radioGender">
                 <mat-radio-button color="warn" value="male" id="male">Male</mat-radio-button>
                 <mat-radio-button color="warn" value="female" id="female">Female</mat-radio-button>
@@ -37,7 +37,7 @@
               </mat-radio-group> -->
             </div>
           </div>
-          <div style="margin-top: 15px; display: flex; align-items: center">
+          <div class="inputLine">
             <!-- PHONE -->
             <app-input
               name="phone"
@@ -49,17 +49,34 @@
               placeholder="123-456-7890 or (11) 91234-5678"></app-input>
 
             <!-- BIRTHDAY -->
-            <mat-form-field>
-              <mat-label>Select your birthday</mat-label>
-              <input matInput [max]="dateNow" [matDatepicker]="picker" />
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
+            <div class="inputForm">
+              <!-- <label for="input" class="labelGender">Select your birthday</label> -->
+              <mat-form-field>
+                <mat-label>Select birthday</mat-label>
+                <input matInput [max]="dateNow" [matDatepicker]="dp3" disabled />
+                <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="inputForm">
+              <mat-form-field>
+                <mat-label>Select this type </mat-label>
+                <mat-select name="typeContact">
+                  <mat-option *ngFor="let type of typesContact" [value]="type.value">
+                    {{ type.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
           </div>
           <div style="display: flex; justify-content: end">
-            <button mat-raised-button (click)="test()" color="primary">NEXT</button>
+            <button mat-raised-button (click)="test()" matStepperNext color="primary">NEXT</button>
           </div>
         </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Address</ng-template>
+        <div></div>
       </mat-step>
     </mat-stepper>
   </mat-card>

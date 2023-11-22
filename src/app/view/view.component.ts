@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Contact } from 'src/app/models/contact';
 import { IContact } from 'src/app/models/contatc.models';
 
@@ -13,7 +14,20 @@ export class ViewComponent {
   public teste: boolean = false;
   public dateNow: Date = new Date();
 
-  constructor() {
+  public typesContact = [
+    { value: 'family', viewValue: 'Family' },
+    { value: 'company', viewValue: 'Company' },
+    { value: 'friend', viewValue: 'Friend' },
+  ];
+
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+
+  constructor(private _formBuilder: FormBuilder) {
     this.delayfake();
   }
 

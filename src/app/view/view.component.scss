@@ -16,10 +16,10 @@
   }
 }
 
-.topLine {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
+mat-card {
+  height: 400px;
+  width: 1000px;
+  padding: 25px;
 }
 
 .loading {
@@ -34,40 +34,50 @@
   align-items: center;
   justify-content: center;
   height: 500px;
-}
 
-mat-card {
-  height: 400px;
-  width: 1000px;
-  padding: 25px;
-}
+  .inputLine {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-.basicInput {
-  height: 260px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .basicInput {
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-.labelGender{
-  font-size: 0.9rem;
-  color: #1876c2;
-  font-weight: 700;
-  position: relative;
-  top: -11px;
-  margin: 0 0 0 7px;
-  padding: 0 3px;
-  background: #424242;
-}
+  .inputGender {
+    border: 2px solid #1876c2;
+    border-radius: 6px;
 
-.inputGender {
-  border: 2px solid #1876c2;
-  border-radius: 6px;
-}
+    label[for=input] {
+      font-size: 0.9rem;
+      color: #1876c2;
+      font-weight: 700;
+      position: relative;
+      top: -11px;
+      margin: 0 0 0 7px;
+      padding: 0 3px;
+      background: #424242;
+    }
+  }
 
-.radioGender {
-  margin-bottom: 10px;
-  display: flex;
-  margin-top: -8px;
-  align-items: center;
+  .radioGender {
+    margin-bottom: 10px;
+    display: flex;
+    margin-top: -8px;
+    align-items: center;
+  }
+
+  .inputForm {
+    margin-top: 10px;
+    border: 2px solid #1876c2;
+    border-radius: 6px;
+
+    mat-form-field {
+      margin-bottom: -1.25em;
+    }
+  }
 }

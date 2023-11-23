@@ -1,9 +1,10 @@
 <div class="coolinput" [style]="'width:' + width">
-  <label for="input" class="text">{{ label }}</label>
+  <label for="input" [ngStyle]="{ background: bgColor }" class="text">{{ label }}</label>
   <input
     [(ngModel)]="ngModelInput"
     [name]="name"
     (ngModelChange)="changeValue($event)"
+    [ngStyle]="{ background: bgColor }"
     [type]="type"
     [placeholder]="placeholder"
     name="input"

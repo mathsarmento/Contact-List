@@ -1,0 +1,31 @@
+<div class="center centerLogin">
+  <div class="box">
+    <div class="leftScreen"></div>
+    <div class="rightScreen">
+      <h3>Login</h3>
+      <app-input
+        type="text"
+        name="email"
+        label="Email:"
+        bgColor="rgb(24, 10, 44)"
+        [(ngModelInput)]="email"
+        placeholder="email@example.com"></app-input>
+      <div class="password">
+        <app-input
+          [type]="showPass ? 'text' : 'password'"
+          name="password"
+          label="Password:"
+          bgColor="rgb(24, 10, 44)"
+          [(ngModelInput)]="password"
+          placeholder="**********">
+        </app-input>
+        <button mat-icon-button (click)="showPass = !showPass" color="primary">
+          <mat-icon>{{ showPass ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      </div>
+      <div class="center">
+        <button mat-raised-button color="primary" (click)="login()">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</div>

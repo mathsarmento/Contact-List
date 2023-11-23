@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { IContact } from '../models/contatc.models';
 import { ContactService } from '../services/contact.service';
 
@@ -17,13 +18,19 @@ export class HomeComponent implements OnInit {
     '../../assets/icons/earth.png',
   ];
 
-  constructor(private contactService: ContactService) {
+  constructor(
+    private contactService: ContactService,
+    private authService: AuthService
+  ) {
     this.getAllContact();
     console.log(this.allContacts);
   }
 
   ngOnInit() {}
 
+  public logout() {
+    this.authService.logout();
+  }
   private getAllContact() {
     this.contactService.getContacts().subscribe((contacts) => (this.allContacts = contacts));
   }

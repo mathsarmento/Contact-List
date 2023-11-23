@@ -8,16 +8,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class InputComponent {
   @Input() name: string = '';
   @Input() ngModelInput = '';
-  @Output() ngModelInputEvent = new EventEmitter();
+  @Output() ngModelInputChange = new EventEmitter<string>();
   @Input() mask: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';
   @Input() type: string = '';
   @Input() width: string = '240px';
   @Input() disabled: boolean = false;
+  @Input() bgColor = '#424242';
 
   changeValue(newValue: any) {
     this.ngModelInput = newValue;
-    this.ngModelInputEvent.emit(newValue);
+    this.ngModelInputChange.emit(newValue);
   }
 }

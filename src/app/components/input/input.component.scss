@@ -1,4 +1,3 @@
-
 .coolinput {
   display: flex;
   flex-direction: column;
@@ -18,23 +17,32 @@
   width: fit-content;
 }
 
-.coolinput input[type=text].input {
+.coolinput .input {
   padding: 15px 10px;
   font-size: 0.9rem;
   color: antiquewhite;
   border: 2px #1876c2 solid;
   border-radius: 5px;
-  background: #424242;
+  // background: #424242;
 }
 
-.coolinput input[type=number].input {
-  padding: 15px 10px;
-  font-size: 0.9rem;
-  color: antiquewhite;
-  border: 2px #1876c2 solid;
-  border-radius: 5px;
-  background: #424242;
-}
+// .coolinput input[type=text].input {
+//   padding: 15px 10px;
+//   font-size: 0.9rem;
+//   color: antiquewhite;
+//   border: 2px #1876c2 solid;
+//   border-radius: 5px;
+//   background: #424242;
+// }
+
+// .coolinput input[type=number].input {
+//   padding: 15px 10px;
+//   font-size: 0.9rem;
+//   color: antiquewhite;
+//   border: 2px #1876c2 solid;
+//   border-radius: 5px;
+//   background: #424242;
+// }
 
 .coolinput input[type=text].input:focus {
   outline: none;

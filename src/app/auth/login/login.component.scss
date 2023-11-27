@@ -1,40 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .centerLogin {
   width: 100%;
   height: 100%;
   align-items: center;
 
-  .box {
-    width: 40%;
-    height: 60%;
-    background-color: rgb(24, 10, 44);
-    border-radius: 15px;
-    display: flex;
+  @media only screen and (max-width: 600px) {}
 
-    .leftScreen {
-      background-color: aliceblue;
-      border-radius: 10px 0 0 10px;
-      height: 100%;
-      width: 50%;
+  @media only screen and (min-width: 601px) {
+    p {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 15px;
+        // color: #c2185b;
     }
 
-    .rightScreen {
-      height: 90%;
-      width: 42%;
+    .box {
+      width: 650px;
+      height: 500px;
+      background-color: rgb(24, 10, 44);
+      border-radius: 15px;
       display: flex;
-      flex-direction: column;
-      margin: 4%;
-      gap: 5%;
-      justify-content: center;
 
-      .password {
+      .leftScreen {
+        background-color: aliceblue;
+        border-radius: 10px 0 0 10px;
+        height: 100%;
+        width: 50%;
+      }
+
+      .rightScreen {
+        height: 90%;
+        width: 42%;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        margin: 4%;
+        // gap: 2%;
+        justify-content: space-between;
 
-        button {
-          position: relative;
-          left: -70px;
-          margin-top: 15px
+        h2 {
+          font-family: 'Roboto Mono', monospace;
+          color: #c2185b;
+          font-size: 30px;
+          margin-top: 10px;
+          margin-bottom: 10px;
         }
+
+        .password {
+          display: flex;
+          align-items: center;
+
+          app-input {
+            width: 100%;
+          }
+
+          button {
+            position: relative;
+            // left: -70px;
+            margin-top: 15px;
+          }
+        }
+      }
+
+      .separation {
+        display: flex;
+        justify-content: center;
+        border-top: white 1px solid;
+        margin-top: 20px;
+
+        p {
+          font-family: 'Bebas Neue', sans-serif;
+          align-items: center;
+          position: relative;
+          margin: 0;
+          font-size: 20px;
+          padding: 2px;
+          top: -13px;
+          background: rgb(24, 10, 44);
+          border: white 1px solid;
+        }
+      }
+
+      .singupButton {
+        color: #c2185b;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .forgotButton {
+        font-size: 12px;
+        margin: 0 0 10px 0;
+        cursor: pointer;
+        width: 120px;
+      }
+
+      img {
+        width: 30px;
+        cursor: pointer;
+        border-radius: 100%;
+        padding: 3px;
+        border-radius: 100%;
+      }
+      img:hover {
+        transition-duration: 1s;
+        background-color: rgb(67, 49, 90);
       }
     }
   }

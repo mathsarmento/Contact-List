@@ -20,7 +20,13 @@ export class AuthService {
         this.router.navigate(['home']);
       },
       (err) => {
-        alert(err.message);
+        var message = '';
+        if (err.code == 'auth/invalid-email') {
+          message = 'Error! \nThe email address is badly formatted. \nTry again.';
+        } else {
+          message = err.message;
+        }
+        alert(message);
         this.router.navigate(['/login']);
       }
     );

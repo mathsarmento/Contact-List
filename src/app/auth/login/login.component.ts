@@ -26,4 +26,12 @@ export class LoginComponent {
       this.password = '';
     }
   }
+
+  public singUp(): void {
+    console.log('oi');
+  }
+
+  public forgotPass(): void {
+    console.log('oi');
+  }
 }

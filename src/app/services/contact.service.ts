@@ -1,17 +1,28 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { IContact } from 'src/app/models/contatc.models';
+
 import { environment } from 'src/environments/environment';
-import { IContact } from '../models/contatc.models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
   private url = environment.api;
+  private dbPath = '/contacts';
 
-  constructor(private httpClient: HttpClient) {}
+  public contacts: AngularFireList<IContact>;
+
+  constructor(private db: AngularFireDatabase) {
+    this.contacts = db.list(this.dbPath);
+  }
 
   getContacts() {
-    return this.httpClient.get<IContact[]>(this.url + '/contacts');
+    return this.contacts;
+    // .snapshotChanges().pipe(
+    //   map((changes) => {
+    //     return changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }));
+    //   })
+    // );
   }
 }

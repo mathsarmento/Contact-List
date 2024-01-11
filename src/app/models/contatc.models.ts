@@ -1,13 +1,13 @@
 export interface IContact {
-  id?: number;
-  name: string;
-  phone: string;
-  birthday: string; //fix
-  email: string;
-  gender: string;
-  localization: ILocalization;
-  type: string;
-  picture: string; // fix
+  key: string | null;
+  name?: string;
+  phone?: string;
+  birthday?: string;
+  email?: string;
+  gender?: string;
+  localization?: ILocalization;
+  type?: string;
+  picture?: string;
 }
 
 export interface ILocalization {

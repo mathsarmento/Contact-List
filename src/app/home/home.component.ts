@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { IContact } from 'src/app/models/contatc.models';
 import { AuthService } from 'src/app/services/auth.service';
-import { IContact } from '../models/contatc.models';
 import { ContactService } from '../services/contact.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
     private authService: AuthService
   ) {
     this.getAllContact();
-    console.log(this.allContacts);
+    // console.log(this.allContacts);
   }
 
   ngOnInit() {}
@@ -32,6 +33,13 @@ export class HomeComponent implements OnInit {
     this.authService.logout();
   }
   private getAllContact() {
-    this.contactService.getContacts().subscribe((contacts) => (this.allContacts = contacts));
+    this.contactService
+      .getContacts()
+      .snapshotChanges()
+      .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
+      .subscribe((data) => {
+        this.allContacts = data;
+        console.log(this.allContacts);
+      });
   }
 }

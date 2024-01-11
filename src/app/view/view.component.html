@@ -41,7 +41,6 @@
             <!-- PHONE -->
             <app-input
               name="phone"
-              [ngModelInput]="contact.phone"
               (ngModelInputEvent)="onChangeInputSecure($event)"
               type="text"
               label="Phone:"
@@ -79,5 +78,8 @@
         <div></div>
       </mat-step>
     </mat-stepper>
+    <!-- <div>
+      <button mat-raised-button routerLink="/home" color="">CANCEL</button>
+    </div> -->
   </mat-card>
 </div>

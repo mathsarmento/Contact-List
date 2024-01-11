@@ -10,7 +10,7 @@ import { ContactService } from '../services/contact.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public displayedColumns: string[] = ['name', 'country', 'phone', 'email', 'birthday', 'actions'];
+  public displayedColumns: string[] = ['id', 'name', 'country', 'phone', 'email', 'birthday', 'actions'];
   public allContacts: IContact[] = [];
   public flags: string[] = [
     '../../assets/icons/brazil.png',

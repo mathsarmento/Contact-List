@@ -7,10 +7,16 @@
 </div>
 <div class="center">
   <div class="table">
-    <table mat-table [dataSource]="allContacts" class="mat-elevation-z8">
+    <table mat-table [dataSource]="allContacts">
+      <!-- id -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="width: 5%; text-align: center">ID</th>
+        <td mat-cell *matCellDef="let row" style="text-align: center">{{ row.key }}</td>
+      </ng-container>
+
       <!-- Position Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef style="width: 25%">Name</th>
+        <th mat-header-cell *matHeaderCellDef style="width: 20%">Name</th>
         <td mat-cell *matCellDef="let row">{{ row.name }}</td>
       </ng-container>
 

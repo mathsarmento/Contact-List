@@ -18,16 +18,19 @@ export class HomeComponent implements OnInit {
     '../../assets/icons/canada.png',
     '../../assets/icons/earth.png',
   ];
+  public loading = false;
 
   constructor(
     private contactService: ContactService,
     private authService: AuthService
   ) {
-    this.getAllContact();
     // console.log(this.allContacts);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loading = true;
+    this.getAllContact();
+  }
 
   public logout() {
     this.authService.logout();
@@ -37,9 +40,14 @@ export class HomeComponent implements OnInit {
       .getContacts()
       .snapshotChanges()
       .pipe(map((changes) => changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
-      .subscribe((data) => {
-        this.allContacts = data;
-        console.log(this.allContacts);
+      .subscribe({
+        next: (data) => {
+          this.allContacts = data;
+          this.loading = false;
+        },
+        error: (error) => {
+          alert(error);
+        },
       });
   }
 }

@@ -9,7 +9,7 @@
 <div *ngIf="!loading" class="backgroundCard">
   <mat-card>
     <mat-stepper [linear]="true" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
+      <mat-step>
         <ng-template matStepLabel>Description</ng-template>
         <div class="basicInput">
           <div class="inputLine">
@@ -75,7 +75,16 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Address</ng-template>
-        <div></div>
+        <div>
+          <!-- CORRIGIR -->
+          <app-input type="text" label="Country:" placeholder="EUA"></app-input>
+          <app-input type="number" label="ZIP:" placeholder="20901"></app-input>
+          <app-input type="text" label="State:" placeholder="Maryland"></app-input>
+          <app-input type="text" label="City:" placeholder="Silver Spring"></app-input>
+          <app-input type="text" label="Road:" placeholder="Normandy Dr"></app-input>
+          <app-input type="number" label="Number:" placeholder="119"></app-input>
+          <app-input type="text" label="Complement:" placeholder="Apartament 112"></app-input>
+        </div>
       </mat-step>
     </mat-stepper>
     <!-- <div>

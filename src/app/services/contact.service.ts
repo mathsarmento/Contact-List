@@ -2,13 +2,10 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { IContact } from 'src/app/models/contatc.models';
 
-import { environment } from 'src/environments/environment';
-
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  private url = environment.api;
   private dbPath = '/contacts';
 
   public contacts: AngularFireList<IContact>;

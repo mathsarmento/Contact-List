@@ -34,9 +34,9 @@
                 <!-- FIX GENDER -->
                 <mat-radio-button color="warn" value="male" id="male">Male</mat-radio-button>
                 <mat-radio-button color="warn" value="female" id="female">Female</mat-radio-button>
-                <mat-radio-button color="warn" value="gender" id="other">
+                <mat-radio-button color="warn" [value]="gender" id="other">
                   <app-input
-                    [disabled]="newContact.gender !== 'gender'"
+                    [disabled]="newContact.gender === 'male' || newContact.gender === 'female'"
                     (ngModelInputChange)="changeGender($event)"
                     type="text"
                     label=""
@@ -68,7 +68,7 @@
             <div class="inputForm">
               <mat-form-field>
                 <mat-label>Select this type </mat-label>
-                <mat-select name="typeContact">
+                <mat-select name="typeContact" [(value)]="newContact.type">
                   <mat-option *ngFor="let type of typesContact" [value]="type.value">
                     {{ type.viewValue }}
                   </mat-option>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { format } from 'date-fns';
 import { Contact } from 'src/app/models/contact';
 import { IContact } from 'src/app/models/contatc.models';
 
@@ -13,6 +14,7 @@ export class ViewComponent {
   public loading: boolean = true;
   public teste: boolean = false;
   public dateNow: Date = new Date();
+  public gender: string = '';
 
   public typesContact = [
     { value: 'family', viewValue: 'Family' },
@@ -32,6 +34,7 @@ export class ViewComponent {
   }
 
   public changeGender(event: string) {
+    this.gender = event;
     this.newContact.gender = event;
   }
 
@@ -41,7 +44,7 @@ export class ViewComponent {
 
   public console() {
     if (this.birthday) {
-      // this.newContact.birthday = format(this.birthday, 'dd/MM/yyyy');
+      this.newContact.birthday = format(this.birthday, 'dd/MM/yyyy');
     }
     console.log(this.newContact);
   }

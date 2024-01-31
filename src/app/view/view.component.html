@@ -14,34 +14,43 @@
         <div class="basicInput">
           <div class="inputLine">
             <!-- NAME -->
-            <app-input type="text" label="Name:" placeholder="Erick S. Cartman"></app-input>
+            <!-- <input type="text" formControlName="name" /> -->
+            <app-input
+              name="name"
+              type="text"
+              label="Name:"
+              placeholder="Erick S. Cartman"
+              [(ngModelInput)]="newContact.name"></app-input>
             <!-- EMAIL -->
-            <app-input type="text" label="Email:" placeholder="erickscart@gmail.com"></app-input>
+            <app-input
+              [(ngModelInput)]="newContact.email"
+              type="text"
+              label="Email:"
+              placeholder="erickscart@gmail.com"></app-input>
             <!-- GENDER -->
             <div class="inputGender">
               <label for="input">Pick your gender</label>
-              <mat-radio-group value="male" class="radioGender">
+              <mat-radio-group value="male" class="radioGender" [(ngModel)]="newContact.gender">
+                <!-- FIX GENDER -->
                 <mat-radio-button color="warn" value="male" id="male">Male</mat-radio-button>
                 <mat-radio-button color="warn" value="female" id="female">Female</mat-radio-button>
-                <mat-radio-button color="warn" value="other" id="other">
-                  <app-input type="text" label="" placeholder="Other" width="125px"></app-input>
+                <mat-radio-button color="warn" value="gender" id="other">
+                  <app-input
+                    [disabled]="newContact.gender !== 'gender'"
+                    (ngModelInputChange)="changeGender($event)"
+                    type="text"
+                    label=""
+                    placeholder="Other"
+                    width="125px"></app-input>
                 </mat-radio-button>
               </mat-radio-group>
-              <!--<mat-radio-group [(ngModel)]="tipoFiltro" aria-labelledby="example-radio-group-label">
-                <mat-radio-button
-                  *ngFor="let tipo of entradaFiltro"
-                  [value]="tipo.toLowerCase()"
-                  class="radioButtonFiltro">
-                  {{ tipo }}
-                </mat-radio-button>
-              </mat-radio-group> -->
             </div>
           </div>
           <div class="inputLine">
             <!-- PHONE -->
             <app-input
               name="phone"
-              (ngModelInputEvent)="onChangeInputSecure($event)"
+              [(ngModelInput)]="newContact.phone"
               type="text"
               label="Phone:"
               mask="(00) 00000-0000||000-000-0000"
@@ -49,10 +58,9 @@
 
             <!-- BIRTHDAY -->
             <div class="inputForm">
-              <!-- <label for="input" class="labelGender">Select your birthday</label> -->
               <mat-form-field>
                 <mat-label>Select birthday</mat-label>
-                <input matInput [max]="dateNow" [matDatepicker]="dp3" disabled />
+                <input matInput [(ngModel)]="birthday" [max]="dateNow" [matDatepicker]="dp3" disabled />
                 <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
                 <mat-datepicker #dp3 disabled="false"></mat-datepicker>
               </mat-form-field>
@@ -69,19 +77,30 @@
             </div>
           </div>
           <div style="display: flex; justify-content: end">
+            <button mat-raised-button (click)="console()" color="primary">CONSOLE</button>
             <button mat-raised-button (click)="test()" matStepperNext color="primary">NEXT</button>
           </div>
         </div>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Address</ng-template>
-        <div>
+        <div class="address">
           <!-- CORRIGIR -->
-          <app-input type="text" label="Country:" placeholder="EUA"></app-input>
-          <app-input type="number" label="ZIP:" placeholder="20901"></app-input>
+          <mat-form-field>
+            <mat-label>Select your country </mat-label>
+            <mat-select name="typeContact">
+              <mat-option *ngFor="let country of countrys" [value]="country.value">
+                <div class="options-country">
+                  <img [src]="country.img" />
+                  {{ country.viewValue }}
+                </div>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <app-input type="texr" label="ZIP:" placeholder="20901"></app-input>
           <app-input type="text" label="State:" placeholder="Maryland"></app-input>
           <app-input type="text" label="City:" placeholder="Silver Spring"></app-input>
-          <app-input type="text" label="Road:" placeholder="Normandy Dr"></app-input>
+          <app-input type="text" label="Street:" placeholder="Normandy Dr"></app-input>
           <app-input type="number" label="Number:" placeholder="119"></app-input>
           <app-input type="text" label="Complement:" placeholder="Apartament 112"></app-input>
         </div>

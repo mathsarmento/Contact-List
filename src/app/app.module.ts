@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 // import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 // import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -68,7 +69,7 @@ const maskConfig: Partial<IConfig> = {
     MatSelectModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    // AngularFireAuthModule,
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
   ],
 

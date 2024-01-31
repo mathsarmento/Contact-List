@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class InputComponent {
   @Input() name: string = '';
-  @Input() ngModelInput = '';
-  @Output() ngModelInputChange = new EventEmitter<string>();
+  @Input() ngModelInput: any = '';
+  @Output() ngModelInputChange = new EventEmitter<any>();
   @Input() mask: string = '';
   @Input() label: string = '';
   @Input() placeholder: string = '';

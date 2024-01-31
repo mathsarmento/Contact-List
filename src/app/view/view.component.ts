@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { Contact } from 'src/app/models/contact';
 import { IContact } from 'src/app/models/contatc.models';
 
@@ -9,7 +8,8 @@ import { IContact } from 'src/app/models/contatc.models';
   styleUrls: ['./view.component.scss'],
 })
 export class ViewComponent {
-  public contact: IContact = new Contact();
+  public newContact: IContact = new Contact();
+  public birthday!: Date;
   public loading: boolean = true;
   public teste: boolean = false;
   public dateNow: Date = new Date();
@@ -20,31 +20,42 @@ export class ViewComponent {
     { value: 'friend', viewValue: 'Friend' },
   ];
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+  public countrys = [
+    { value: 0, viewValue: 'Brazil', img: '../../assets/icons/brazil.png' },
+    { value: 1, viewValue: 'EUA', img: '../../assets/icons/united-states.png' },
+    { value: 2, viewValue: 'Canada', img: '../../assets/icons/canada.png' },
+    { value: 3, viewValue: 'Other', img: '../../assets/icons/earth.png' },
+  ];
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor() {
     this.delayfake();
   }
 
+  public changeGender(event: string) {
+    this.newContact.gender = event;
+  }
+
   public test() {
-    console.log(this.contact);
+    console.log(this.newContact);
   }
 
-  onChangeInputSecure(event: any) {
-    this.contact.phone = event;
-    console.log(this.contact.phone);
-
-    // if (!event) {
-    //   this.contact[altera] = '';
-    // } else {
-    //   this.contact[altera] = event;
-    // }
+  public console() {
+    if (this.birthday) {
+      // this.newContact.birthday = format(this.birthday, 'dd/MM/yyyy');
+    }
+    console.log(this.newContact);
   }
+
+  // onChangeInputSecure(event: any) {
+  //   this.contact.phone = event;
+  //   console.log(this.contact.phone);
+
+  //   // if (!event) {
+  //   //   this.contact[altera] = '';
+  //   // } else {
+  //   //   this.contact[altera] = event;
+  //   // }
+  // }
 
   public delayfake() {
     setTimeout(() => {

@@ -2,7 +2,7 @@
 
 .header {
   font-family: 'Russo One', sans-serif;
-  background-color: #000621;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,4 +80,20 @@ mat-card {
       margin-bottom: -1.25em;
     }
   }
+
+  .address {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
+
+  .options-country{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    img {
+      margin-right: 10px;
+    }
+  }

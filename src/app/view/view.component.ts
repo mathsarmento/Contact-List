@@ -29,9 +29,7 @@ export class ViewComponent {
     { value: 3, viewValue: 'Other', img: '../../assets/icons/earth.png' },
   ];
 
-  constructor() {
-    this.delayfake();
-  }
+  constructor() {}
 
   public changeGender(event: string) {
     this.gender = event;
@@ -59,10 +57,4 @@ export class ViewComponent {
   //   //   this.contact[altera] = event;
   //   // }
   // }
-
-  public delayfake() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 1000);
-  }
 }

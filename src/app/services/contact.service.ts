@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { IContact } from 'src/app/models/contatc.models';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -16,10 +15,7 @@ export class ContactService {
 
   getContacts() {
     return this.contacts;
-    // .snapshotChanges().pipe(
-    //   map((changes) => {
-    //     return changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }));
-    //   })
-    // );
   }
+
+  postContact(contact: IContact) {}
 }

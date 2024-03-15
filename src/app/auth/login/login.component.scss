@@ -27,6 +27,17 @@
         border-radius: 10px 0 0 10px;
         height: 100%;
         width: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .bg {
+          height: 100%;
+          width: 100%;
+          border-radius: 0;
+          padding: 0;
+        }
       }
 
       .rightScreen {

@@ -14,9 +14,10 @@ export class Contact implements IContact {
 
 export class Localization implements ILocalization {
   country = 0;
-  zip = 0;
+  zip = '';
+  state = '';
   city = '';
   address = '';
-  number = 0;
+  number = '';
   complement = '';
 }

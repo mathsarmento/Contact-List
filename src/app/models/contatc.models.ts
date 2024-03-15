@@ -12,9 +12,10 @@ export interface IContact {
 
 export interface ILocalization {
   country: number;
-  zip: number;
+  zip: string;
+  state: string;
   city: string;
   address: string;
-  number: number;
+  number: string;
   complement: string;
 }

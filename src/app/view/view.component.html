@@ -24,7 +24,7 @@
             <!-- EMAIL -->
             <app-input
               [(ngModelInput)]="newContact.email"
-              type="text"
+              type="email"
               label="Email:"
               placeholder="erickscart@gmail.com"></app-input>
             <!-- GENDER -->
@@ -77,8 +77,8 @@
             </div>
           </div>
           <div style="display: flex; justify-content: end">
-            <button mat-raised-button (click)="console()" color="primary">CONSOLE</button>
-            <button mat-raised-button (click)="test()" matStepperNext color="primary">NEXT</button>
+            <button mat-raised-button style="margin-right: 15px" routerLink="/home" color="">CANCEL</button>
+            <button mat-raised-button matStepperNext color="primary">NEXT</button>
           </div>
         </div>
       </mat-step>
@@ -86,23 +86,60 @@
         <ng-template matStepLabel>Address</ng-template>
         <div class="address">
           <!-- CORRIGIR -->
-          <mat-form-field>
-            <mat-label>Select your country </mat-label>
-            <mat-select name="typeContact">
-              <mat-option *ngFor="let country of countrys" [value]="country.value">
-                <div class="options-country">
-                  <img [src]="country.img" />
-                  {{ country.viewValue }}
-                </div>
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <app-input type="texr" label="ZIP:" placeholder="20901"></app-input>
-          <app-input type="text" label="State:" placeholder="Maryland"></app-input>
-          <app-input type="text" label="City:" placeholder="Silver Spring"></app-input>
-          <app-input type="text" label="Street:" placeholder="Normandy Dr"></app-input>
-          <app-input type="number" label="Number:" placeholder="119"></app-input>
-          <app-input type="text" label="Complement:" placeholder="Apartament 112"></app-input>
+          <div class="firstLine">
+            <div class="inputForm">
+              <mat-form-field>
+                <mat-label>Select your country </mat-label>
+                <mat-select name="typeContact" [(value)]="newContact.localization!.country">
+                  <mat-option *ngFor="let country of countrys" [value]="country.value">
+                    <div class="options-country">
+                      <img [src]="country.img" />
+                      {{ country.viewValue }}
+                    </div>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <app-input
+              type="text"
+              [(ngModelInput)]="newContact.localization!.zip"
+              label="ZIP:"
+              placeholder="20901"></app-input>
+            <app-input
+              type="text"
+              [(ngModelInput)]="newContact.localization!.state"
+              label="State:"
+              placeholder="Maryland"></app-input>
+          </div>
+          <div class="secondLine">
+            <app-input
+              type="text"
+              width="216px"
+              [(ngModelInput)]="newContact.localization!.city"
+              label="City:"
+              placeholder="Silver Spring"></app-input>
+            <app-input
+              type="text"
+              [(ngModelInput)]="newContact.localization!.address"
+              label="Street:"
+              placeholder="Normandy Dr"></app-input>
+            <app-input
+              type="text"
+              [(ngModelInput)]="newContact.localization!.number"
+              label="Number:"
+              placeholder="119"></app-input>
+          </div>
+          <div class="thirdLine">
+            <app-input
+              type="text"
+              [(ngModelInput)]="newContact.localization!.complement"
+              label="Complement:"
+              placeholder="Apartament 112"></app-input>
+            <div style="display: flex">
+              <button mat-raised-button style="margin-right: 15px" routerLink="/home" color="">CANCEL</button>
+              <button mat-raised-button style="margin-right: 15px" (click)="submit()" color="primary">SUBMIT</button>
+            </div>
+          </div>
         </div>
       </mat-step>
     </mat-stepper>

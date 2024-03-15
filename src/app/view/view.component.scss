@@ -82,9 +82,32 @@ mat-card {
   }
 
   .address {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
+    .firstLine {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .secondLine {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .thirdLine {
+      align-items: end;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+
   }
 }
 

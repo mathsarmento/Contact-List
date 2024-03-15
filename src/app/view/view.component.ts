@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { format } from 'date-fns';
 import { Contact } from 'src/app/models/contact';
 import { IContact } from 'src/app/models/contatc.models';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-view',
@@ -11,7 +11,7 @@ import { IContact } from 'src/app/models/contatc.models';
 export class ViewComponent {
   public newContact: IContact = new Contact();
   public birthday!: Date;
-  public loading: boolean = true;
+  public loading: boolean = false;
   public teste: boolean = false;
   public dateNow: Date = new Date();
   public gender: string = '';
@@ -29,7 +29,9 @@ export class ViewComponent {
     { value: 3, viewValue: 'Other', img: '../../assets/icons/earth.png' },
   ];
 
-  constructor() {}
+  constructor(
+    private contactService: ContactService // private authService: AuthService
+  ) {}
 
   public changeGender(event: string) {
     this.gender = event;
@@ -40,21 +42,7 @@ export class ViewComponent {
     console.log(this.newContact);
   }
 
-  public console() {
-    if (this.birthday) {
-      this.newContact.birthday = format(this.birthday, 'dd/MM/yyyy');
-    }
-    console.log(this.newContact);
+  public submit() {
+    this.contactService.postContact(this.newContact);
   }
-
-  // onChangeInputSecure(event: any) {
-  //   this.contact.phone = event;
-  //   console.log(this.contact.phone);
-
-  //   // if (!event) {
-  //   //   this.contact[altera] = '';
-  //   // } else {
-  //   //   this.contact[altera] = event;
-  //   // }
-  // }
 }
